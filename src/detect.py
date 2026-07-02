@@ -16,13 +16,16 @@ from datetime import datetime
 
 def main(source, model_path="yolov8n.pt", conf=0.5):
     model = YOLO(model_path)
-    cap = cv2.VideoCapture(source if isinstance(source, int) else source)
+    # cap = cv2.VideoCapture(source if isinstance(source, int) else source)
+    cap = cv2.VideoCapture("https://192.168.1.13:8080/video", cv2.CAP_FFMPEG)
+
 
     print(f"[INFO] Starting detection from source: {source}")
 
     frame_count = 0
     while cap.isOpened():
         ret, frame = cap.read()
+        # cv2.imshow("YOLO Stream", frame)
         if not ret:
             break
 
@@ -48,8 +51,10 @@ def main(source, model_path="yolov8n.pt", conf=0.5):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Item detection pipeline")
-    parser.add_argument("--source", default=0, help="Camera source or URL")
+    # parser.add_argument("--source", default=0, help="Camera source or URL")
     parser.add_argument("--model", default="yolov8n.pt", help="YOLO model path")
     parser.add_argument("--conf", type=float, default=0.5, help="Confidence threshold")
     args = parser.parse_args()
-    main(args.source, args.model, args.conf)
+    # main(args.source, args.model, args.conf)
+    main('', args.model, args.conf)
+
