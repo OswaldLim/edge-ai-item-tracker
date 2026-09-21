@@ -52,3 +52,29 @@ See Notion Hardware DB for live tracking.
 ## Credits
 
 Inspired by: Meta Aria Project, Rewind Pin, Edge Impulse TinyML projects
+
+
+
+## Database Structure:
+
+sessions
+│
+├── session A
+├── session B
+└── session C
+
+
+objects
+│
+├── wallet_001
+├── wallet_002
+└── bottle_001
+
+
+observations
+│
+├── wallet_001 observation
+├── wallet_001 observation
+├── wallet_002 observation
+├── bottle_001 observation
+└── ...

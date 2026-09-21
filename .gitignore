@@ -219,3 +219,5 @@ __marimo__/
 
 #.pt models
 *.pt
+
+*.db
