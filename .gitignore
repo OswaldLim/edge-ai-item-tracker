@@ -151,6 +151,7 @@ activemq-data/
 .env
 .envrc
 .venv
+CV/
 env/
 venv/
 ENV/
@@ -221,3 +222,6 @@ __marimo__/
 *.pt
 
 *.db
+
+*.jpg
+*.npz
